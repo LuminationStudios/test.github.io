@@ -1,1 +1,163 @@
+.language{
+    display:flex;
+    user-select: none;
+}
+.language .lang-container {
+    position: relative;
+}
 
+.language .lang-selector-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language .locale-container{
+    display: flex;
+    align-items: center;
+}
+
+.language .flag {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.language .selector-language-name{
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.language .arrow-icon{
+    padding-left: 8px;
+}
+
+.language .lang-dropdown-container {
+    z-index: 10;
+    bottom: 100%;
+    margin-bottom: 8px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    overflow: hidden;
+    display: none;
+}
+
+.language .lang-dropdown {
+    max-height: 320px;
+    min-width: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.language .dropdown-item{
+    padding: 8px;
+}
+
+.language .dropdown-clickable{
+    cursor: pointer;
+}
+
+.language .dropdown-language-name{
+    color: #23272a;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.flag-ru{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f39e6ac4c46ce39566_ru.png");
+}
+
+.flag-bg{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6257c2a1e7544e303083b2b1_bolg.png");
+}
+.flag-cs{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1254305732a01676d_cs.png");
+}
+.flag-da{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f16128094022db6768_da.png");
+}
+.flag-de{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1c50496ce73c40d99_de.png");
+}
+.flag-en-GB {
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62d01c2078d11b68a1633276_Rectangle%201%20(3).svg");
+}
+.flag-el{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f17c26b5fe5a53876f_el.png");
+}
+.flag-en-US{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6257bf8b5ba300233705a542_en.png");
+}
+.flag-en{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6257bf8b5ba300233705a542_en.png");
+}
+.flag-es{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f14edab1b0029593fc_es-ES.png");
+}
+.flag-fi{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1921c0cf82fc59da7_fi.png");
+}
+.flag-fr{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1544a7ab7c66e9ccb_fr.png");
+}
+.flag-hi{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f13fcb6e76c05b504e_hi.png");
+}
+.flag-hr{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1aeebe9064763c90c_hr.png");
+}
+.flag-hu{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f19e6ac41dcce39561_hu.png");
+}
+.flag-it{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1bd099a25f8f77ea4_it.png");
+}
+.flag-ja{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1e819841940bec47d_ja.png");
+}
+.flag-ko{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f125430509b9016776_ko.png");
+}
+.flag-lt{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f14edab152b8959405_lt.png");
+}
+.flag-nl{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f3e00ff80959abff2a_nl.png");
+}
+.flag-no{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f37c26b5e22453877d_no.png");
+}
+.flag-pl{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f3c504963019c40db7_pl.png");
+}
+.flag-pt-BR{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f3d809bc2503e62bec_pt-BR.png");
+}
+.flag-ro{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f36e94d725ce411ab6_ro.png");
+}
+.flag-sv{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f49e6ac47674e39567_sv-SE.png");
+}
+.flag-th{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f465c529bf26e211a1_th.png");
+}
+.flag-tr{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f4e819848178bec4d1_tr.png");
+}
+.flag-uk{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f37c26b54f6a53877f_uk.png");
+}
+.flag-vi{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f4e819840d89bec4d2_vi.png");
+}
+.flag-zh-Hans{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f49e6ac45f35e39568_zh-CN.png");
+}
+.flag-zh-TW{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f33fcb6ea5c95b5069_zh-TW.png");
+}

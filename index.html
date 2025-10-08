@@ -21,7 +21,7 @@
 
   <script>
     const path = window.location.pathname.replace(/^\/|\/$/g, '');
-    fetch(window.location.origin + '/bios.json')
+    fetch(window.location.origin + '/bios.js')
       .then(r => r.json())
       .then(data => {
         const user = data[path] || data[''];

@@ -18,19 +18,6 @@
 
   <script>
     const path = window.location.pathname.replace(/^\/|\/$/g, '');
-    fetch(window.location.origin + '/bios.json')
-      .then(r => r.json())
-      .then(data => {
-        const user = data[path];
-        if (user) {
-          window.location.href = '/' + path;
-        } else {
-          document.getElementById('bioCard').innerHTML = `
-            <h1>404</h1>
-            <p>Bio not found 💔</p>
-          `;
-        }
-      });
-  </script>
-</body>
-</html>
+
+    // Always point to your repo’s JSON path, not relative
+    const jsonURL = window.location.or

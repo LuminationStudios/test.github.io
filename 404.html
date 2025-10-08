@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 — Bio Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="bioCard">
+      <h1>Loading...</h1>
+    </div>
+    <div class="home-buttons">
+      <a class="btn" href="create.html" target="_blank">Create My Bio</a>
+    </div>
+  </div>
+
+  <script>
+    const path = window.location.pathname.replace(/^\/|\/$/g, '');
+    fetch('bios.json')
+      .then(r => r.json())
+      .then(data => {
+        const user = data[path];
+        if (user) {
+          window.location.href = '/' + path;
+        } else {
+          document.getElementById('bioCard').innerHTML = `
+            <h1>404</h1>
+            <p>Bio not found 💔</p>
+          `;
+        }
+      });
+  </script>
+</body>
+</html>

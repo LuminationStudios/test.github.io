@@ -20,33 +20,40 @@
   </div>
 
   <script>
-    const path = window.location.pathname.replace(/^\/|\/$/g, '');
-    fetch(window.location.origin + '/bios.js')
-      .then(r => r.json())
-      .then(data => {
-        const user = data[path] || data[''];
-        if (user) {
-          document.getElementById('pfp').src = user.image || 'images/placeholder.png';
-          document.getElementById('name').textContent = user.name || '';
-          document.getElementById('bio').textContent = user.bio || '';
-          const linksDiv = document.getElementById('links');
-          linksDiv.innerHTML = '';
-          if (user.links) {
-            for (const [label, url] of Object.entries(user.links)) {
-              const a = document.createElement('a');
-              a.href = url;
-              a.textContent = label;
-              a.target = "_blank";
-              linksDiv.appendChild(a);
-            }
-          }
-        } else {
-          document.getElementById('bioCard').innerHTML = `
-            <h1>404</h1>
-            <p>Bio not found 💔</p>
-          `;
+const path = window.location.pathname.replace(/^\/|\/$/g, '');
+import(window.location.origin + '/bios.js')
+  .then(module => {
+    const data = module.bios || {};
+    const user = data[path] || data[''];
+    if (user) {
+      document.getElementById('pfp').src = user.image || 'images/placeholder.png';
+      document.getElementById('name').textContent = user.name || '';
+      document.getElementById('bio').textContent = user.bio || '';
+      const linksDiv = document.getElementById('links');
+      linksDiv.innerHTML = '';
+      if (user.links) {
+        for (const [label, url] of Object.entries(user.links)) {
+          const a = document.createElement('a');
+          a.href = url;
+          a.textContent = label;
+          a.target = "_blank";
+          linksDiv.appendChild(a);
         }
-      });
+      }
+    } else {
+      document.getElementById('bioCard').innerHTML = `
+        <h1>404</h1>
+        <p>Bio not found 💔</p>
+      `;
+    }
+  })
+  .catch(err => {
+    console.error('Error loading bios:', err);
+    document.getElementById('bioCard').innerHTML = `
+      <h1>Oops</h1>
+      <p>Could not load bios.js 😭</p>
+    `;
+  });
   </script>
 </body>
 </html>

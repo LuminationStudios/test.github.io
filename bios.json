@@ -1,14 +1,26 @@
 {
   "": {
-    "name": "Welcome 🌸",
+    "name": "Welcome ?",
     "bio": "This is your bio site. Use the button to create your own card.",
     "image": "images/placeholder.png",
-    "links": { "Home": "/" }
+    "links": {
+      "Home": "/"
+    }
   },
   "artemis": {
     "name": "Artemis",
-    "bio": "Pastel designer & coder 💕",
+    "bio": "Pastel designer & coder ?",
     "image": "images/placeholder.png",
-    "links": { "Instagram": "https://instagram.com/artiedesigns" }
+    "links": {
+      "Instagram": "https://instagram.com/artiedesigns"
+    }
+  },
+  "test": {
+    "name": "Artemis",
+    "bio": "I am a test",
+    "image": "images/placeholder.png",
+    "links": {
+      "Google": "https://google.com"
+    }
   }
 }

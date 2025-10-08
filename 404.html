@@ -12,12 +12,41 @@
       <h1>Loading...</h1>
     </div>
     <div class="home-buttons">
-      <a class="btn" href="create.html" target="">Create My Bio</a>
+      <a class="btn" href="create.html" target="_blank">Create My Bio</a>
     </div>
   </div>
 
   <script>
-    // remove leading/trailing slashes
+    // Remove leading/trailing slashes
     const path = window.location.pathname.replace(/^\/|\/$/g, '');
 
-    // Full GitHub
+    // Full GitHub Pages path to your bios.js file
+    const script = document.createElement('script');
+    script.src = "https://luminationstudios.github.io/test.github.io/bios.js";
+
+    script.onload = () => {
+      const data = window.bios || {};
+      const username = path.split('/').pop(); // handle nested paths like /test.github.io/artemis
+      const user = data[username] || data[''];
+      if (user) {
+        // Redirect to root index.html with user data loaded
+        window.location.href = "https://luminationstudios.github.io/test.github.io/" + username;
+      } else {
+        document.getElementById('bioCard').innerHTML = `
+          <h1>404</h1>
+          <p>Bio not found 💔</p>
+        `;
+      }
+    };
+
+    script.onerror = () => {
+      document.getElementById('bioCard').innerHTML = `
+        <h1>Oops</h1>
+        <p>Could not load bios.js 😭</p>
+      `;
+    };
+
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

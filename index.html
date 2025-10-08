@@ -19,10 +19,10 @@
     </div>
   </div>
 
-  <script>
+<script>
   const path = window.location.pathname.replace(/^\/|\/$/g, '');
   const script = document.createElement('script');
-  script.src = window.location.origin + '/test.github.io/bios.js';
+  script.src = "https://luminationstudios.github.io/test.github.io/bios.js";
   script.onload = () => {
     const data = window.bios || {};
     const user = data[path] || data[''];
@@ -55,6 +55,7 @@
     `;
   };
   document.body.appendChild(script);
-  </script>
+</script>
+
 </body>
 </html>

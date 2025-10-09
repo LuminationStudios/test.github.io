@@ -1,6 +1,6 @@
 async function loadJSON(path) {
   try {
-    const res = await fetch(`./${path}?v=${Date.now()}`);
+    const res = await fetch(`./${path}?v=${Date.now()}`); // cache-busting
     if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
     return await res.json();
   } catch (err) {
@@ -17,48 +17,22 @@ async function initSite() {
   ]);
 
   // 🌸 Navbar
-  if (navbarData && document.querySelector("header")) {
-    const header = document.querySelector("header");
-    header.classList.add("sticky-header");
-
-    const brand = document.createElement("div");
-    brand.className = "brand";
-    brand.innerHTML = `
-      <div class="logo">${navbarData.navbar.brand.logo}</div>
-      <div style="font-weight:700">${navbarData.navbar.brand.name}</div>
-    `;
-
-    const navLinks = document.createElement("div");
-    navLinks.className = "nav-links";
-    navLinks.innerHTML = navbarData.navbar.links
-      .map(link => `
-        <a href="${link.url}" class="btn ${link.class || ""}">
-          ${link.label}
-        </a>
-      `)
-      .join("");
-
-    const menuToggle = document.createElement("button");
-    menuToggle.className = "menu-toggle";
-    menuToggle.innerHTML = "☰";
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      menuToggle.classList.toggle("open");
-    });
-
-    header.innerHTML = "";
-    header.appendChild(brand);
-    header.appendChild(menuToggle);
-    header.appendChild(navLinks);
+  if (navbarData && navbarData.navbar && document.querySelector("nav")) {
+    const nav = document.querySelector("nav");
+    nav.classList.add("nav-links");
+    nav.innerHTML = navbarData.navbar.links.map(link => {
+      const cls = link.class ? `class="${link.class}"` : "";
+      return `<a href="${link.href}" ${cls}>${link.text}</a>`;
+    }).join("");
   }
 
-  // 🌿 Services
-  if (servicesData && document.getElementById("services-grid")) {
+  // 🌿 Services Section
+  if (servicesData && servicesData.services && document.getElementById("services-grid")) {
     const servicesGrid = document.getElementById("services-grid");
     servicesGrid.innerHTML = "";
     servicesData.services.forEach(service => {
       const el = document.createElement("div");
-      el.className = "card service";
+      el.className = "service";
       el.innerHTML = `
         <h3>${service.title}</h3>
         <p>${service.desc}</p>
@@ -67,14 +41,27 @@ async function initSite() {
     });
   }
 
-  // 🌷 Footer
-  if (footerData && document.querySelector("footer")) {
+  // 🌼 Footer
+  if (footerData && footerData.footer && document.querySelector("footer")) {
     const footer = document.querySelector("footer");
     footer.innerHTML = `
       <div>${footerData.footer.left}</div>
       <div>${footerData.footer.right}</div>
     `;
   }
+
+  // 🍔 Mobile Menu Toggle
+  const header = document.querySelector("header");
+  header.classList.add("sticky-header");
+
+  const toggle = document.createElement("div");
+  toggle.classList.add("menu-toggle");
+  header.appendChild(toggle);
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    nav.classList.toggle("active");
+  });
 }
 
 document.addEventListener("DOMContentLoaded", initSite);

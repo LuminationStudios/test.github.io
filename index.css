@@ -1,5 +1,5 @@
 :root {
-  --bg: #ffffff;
+  --bg: #FFEFE4;
   --card: #FFF6EE;
   --card-pale: #fbfbfd
   --accent-1: #FFB88C;
@@ -15,7 +15,7 @@
 /* 🌸 Base Layout */
 html, body {
   height: 100%;
-  background: linear-gradient(180deg, #FFEFE1 0%, #FFE0C9 100%);
+  background: linear-gradient(180deg, #FFEFE4 0%, #FFE3D4 100%);
   margin: 0;
   color: var(--muted);
   font-family: inherit;

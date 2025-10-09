@@ -112,51 +112,50 @@ h1 { font-size: 36px; margin: 0 0 8px; }
 p.lead { margin: 0 0 18px; color: #5b4c45; }
 h2, h3 { color: var(--muted); }
 
-/* 🪴 Services Section */
+/* 🪴 Services Section - Matches Hero Card Style */
 #services {
-  background: var(--card);
-  border-radius: 24px;
-  padding: 60px 60px;
+  background: linear-gradient(180deg, var(--card), var(--glass));
+  border-radius: var(--radius);
+  padding: 60px 40px;
   margin: 60px auto;
   max-width: 1100px;
-  box-shadow:
-    0 8px 24px rgba(255, 180, 120, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  box-shadow: var(--glow);
+  backdrop-filter: blur(8px);
   position: relative;
+  text-align: center;
 }
 
 #services h2 {
-  text-align: center;
   font-size: 1.8rem;
   color: var(--muted);
   margin-bottom: 2rem;
+  font-weight: 700;
 }
 
-/* Inner service cards grid */
+/* Inner Grid */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
+  gap: 28px;
   justify-content: center;
-  padding: 0 20px;
   background: transparent;
+  padding: 20px 10px;
 }
 
+/* 🍮 Little Service Cards - Crème Style */
 .service {
-  background: linear-gradient(180deg, var(--card), var(--glass));
+  background: var(--card);
   border-radius: var(--radius);
-  padding: 28px;
-  box-shadow: var(--glow);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(255, 180, 120, 0.15);
+  border: none;
+  transition: all 0.25s ease;
   text-align: center;
 }
 
 .service:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(255, 180, 120, 0.35);
-  background: linear-gradient(180deg, #fffaf6, rgba(255, 255, 255, 0.95));
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(255, 180, 120, 0.25);
 }
 
 .service h3 {
@@ -171,7 +170,6 @@ h2, h3 { color: var(--muted); }
   line-height: 1.5;
   font-size: 0.95rem;
 }
-
 
 /* 💌 Contact Card */
 .contact {

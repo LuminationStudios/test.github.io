@@ -1,83 +1,84 @@
 :root {
-  --bg: #fdf5ef;
-  --bg-gradient: linear-gradient(180deg, #fff3ea 0%, #ffe9d6 100%);
-  --card: #fff6ee;
+  --bg: #fff4eb;
+  --bg-gradient: linear-gradient(180deg, #fff1e4 0%, #ffe8d7 100%);
+  --card: #fff8f3;
   --accent-1: #ffb88c;
   --accent-2: #ffd27f;
+  --accent-3: #c7e8d2;
   --muted: #7c6b63;
+  --glass: rgba(255, 255, 255, 0.6);
   --glow: 0 8px 24px rgba(255, 160, 90, 0.25);
   --radius: 14px;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* 🌿 Base */
+/* 🌸 Base Layout */
 html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
   background: var(--bg-gradient);
   color: var(--muted);
   font-family: inherit;
-  height: 100%;
+  scroll-behavior: smooth;
 }
 
-img {max-width: 100%; border-radius: var(--radius);}
-a {color: inherit; text-decoration: none;}
-button {font-family: inherit; cursor: pointer; border: none;}
+img { max-width: 100%; border-radius: var(--radius); }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; }
 
-/* 🌸 Layout */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 28px;
-}
+/* 🌿 Containers */
+.container { max-width: 1100px; margin: 0 auto; padding: 28px; }
 
-/* 🌿 Sticky Header */
-header.sticky-header {
+/* 🩵 Sticky Header */
+.sticky-header {
   position: sticky;
   top: 0;
-  z-index: 999;
+  width: 100%;
+  background: rgba(255, 247, 242, 0.8);
   backdrop-filter: blur(10px);
-  background: rgba(255, 248, 243, 0.85);
-  box-shadow: 0 4px 20px rgba(255, 180, 130, 0.15);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 4px 20px rgba(255, 190, 130, 0.15);
+  z-index: 999;
 }
 
-/* 🌱 Brand */
-.brand {
+.header-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+/* 🌼 Branding */
+.brand {
+  display: flex;
   gap: 12px;
+  align-items: center;
 }
 
 .logo {
   width: 48px;
   height: 48px;
-  border-radius: var(--radius);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   box-shadow: var(--glow);
+  animation: sparkle 3s infinite ease-in-out;
 }
 
-/* 🌼 Navbar */
+/* 🌸 Navbar Buttons */
 .nav-links {
   display: flex;
+  gap: 14px;
   align-items: center;
-  gap: 16px;
   transition: all 0.3s ease;
 }
 
 a.btn {
-  padding: 8px 16px;
-  border-radius: var(--radius);
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
   background: transparent;
   color: var(--muted);
-  font-weight: 500;
   transition: all 0.25s ease;
 }
 
@@ -100,50 +101,44 @@ a.cta:hover {
   transform: translateY(-2px);
 }
 
-/* 🍔 Mobile Toggle */
+/* 🍔 Mobile Menu Button */
 .menu-toggle {
   display: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  position: relative;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: var(--muted);
 }
 
-.menu-toggle::before,
-.menu-toggle::after {
-  content: "";
-  position: absolute;
-  left: 8px;
-  right: 8px;
-  height: 3px;
-  background: white;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+.menu-toggle.open {
+  color: var(--accent-1);
 }
 
-.menu-toggle::before { top: 10px; }
-.menu-toggle::after { bottom: 10px; }
-
-.menu-toggle.open::before { transform: translateY(6px) rotate(45deg); }
-.menu-toggle.open::after { transform: translateY(-6px) rotate(-45deg); }
-
-/* 📱 Mobile Nav */
-@media (max-width: 860px) {
-  .menu-toggle { display: block; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 64px;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-end;
-    background: rgba(255, 248, 243, 0.95);
-    box-shadow: var(--glow);
-    padding: 18px;
-    border-radius: 0 0 0 var(--radius);
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: block;
   }
-  .nav-links.active { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    width: 100%;
+    background: rgba(255, 248, 243, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 200, 150, 0.25);
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* 🌿 Hero Section */
@@ -156,67 +151,23 @@ a.cta:hover {
 }
 
 .hero-card {
-  background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.85));
+  background: linear-gradient(180deg, var(--card), var(--glass));
   border-radius: var(--radius);
   padding: 28px;
   box-shadow: var(--glow);
   backdrop-filter: blur(6px);
 }
 
-h1 {
-  font-size: 36px;
-  margin: 0 0 8px;
-}
-
-p.lead {
-  margin: 0 0 18px;
-  color: #5b4c45;
-  line-height: 1.5;
-}
-
-/* 🪴 Services Section */
-#services {
-  background: linear-gradient(180deg, #fff7f1, #fff1e4);
-  border-radius: 20px;
-  padding: 60px 40px;
-  margin: 40px auto;
-  max-width: 1100px;
-  box-shadow: 0 8px 24px rgba(255, 180, 120, 0.25);
-}
-
-#services h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  color: var(--muted);
-  margin-bottom: 2rem;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-.service {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: 0 8px 18px rgba(255, 180, 120, 0.18);
-  text-align: center;
-  transition: all 0.25s ease;
-}
-
-.service:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(255, 180, 120, 0.3);
-}
+h1 { font-size: 36px; margin: 0 0 8px; }
+p.lead { margin: 0 0 18px; color: #5b4c45; }
+h2, h3 { color: var(--muted); }
 
 /* 💌 Contact Card */
 .contact {
-  border-radius: var(--radius);
+  border-radius: 12px;
   padding: 24px;
-  background: var(--card);
-  box-shadow: var(--glow);
+  background: linear-gradient(180deg, #fffdf9, #fff7f1);
+  box-shadow: 0 10px 30px rgba(200, 120, 60, 0.12);
   display: flex;
   gap: 16px;
   align-items: center;
@@ -238,20 +189,70 @@ p.lead {
 }
 
 .contact .info {
-  line-height: 1.4;
-  text-align: left;
+  line-height: 1.5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
-.contact .phone {font-weight: 700;}
 
 .contact .btn.cta {
-  display: block;
-  margin: 12px auto 0;
-  text-align: center;
-  padding: 10px 20px;
+  align-self: center;
+  margin-top: 10px;
+  padding: 10px 16px;
 }
 
-/* ✨ Modal */
+/* 🌸 Services Section */
+#services {
+  background: linear-gradient(180deg, #fff8f3, #fff2e6);
+  border-radius: 24px;
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 1100px;
+  box-shadow: 0 8px 24px rgba(255, 180, 120, 0.25);
+}
+
+#services h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.service {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--glow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(255, 190, 140, 0.35);
+}
+
+.service h3 {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.service p {
+  margin: 0;
+  color: #5b4c45;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* 💬 Modal */
 .modal {
   display: none;
   position: fixed;
@@ -291,6 +292,7 @@ input, select, textarea {
   background: #fffdfb;
   color: var(--muted);
   font-size: 1em;
+  font-family: inherit;
 }
 
 /* 🌟 Footer */
@@ -311,8 +313,14 @@ footer {
   to {opacity: 1; transform: translateY(0);}
 }
 
+@keyframes sparkle {
+  0% { box-shadow: 0 0 8px rgba(255,200,150,0.3); }
+  50% { box-shadow: 0 0 24px rgba(255,180,130,0.5); }
+  100% { box-shadow: 0 0 8px rgba(255,200,150,0.3); }
+}
+
 /* 📱 Responsive */
 @media (max-width: 880px) {
-  .hero {grid-template-columns: 1fr;}
-  footer {flex-direction: column; text-align: center; gap: 8px;}
+  .hero { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; gap: 8px; }
 }

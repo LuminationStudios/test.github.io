@@ -1,6 +1,6 @@
 async function loadJSON(path) {
   try {
-    const res = await fetch(`./${path}?v=${Date.now()}`); // cache-busting
+    const res = await fetch(`./${path}?v=${Date.now()}`); // Cache-busting
     if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
     return await res.json();
   } catch (err) {
@@ -10,43 +10,28 @@ async function loadJSON(path) {
 }
 
 async function initSite() {
-  const [headerData, bodyData, servicesData, footerData] = await Promise.all([
+  // Only load services and footer
+  const [servicesData, footerData] = await Promise.all([
     loadJSON("services.json"),
     loadJSON("footer.json")
   ]);
 
-  // Header
-  if (headerData && document.getElementById("brand")) {
-    document.getElementById("brand").innerHTML = `
-      <div class="logo">${headerData.brand.logo || "🍂"}</div>
-      <div>
-        <div style="font-weight:700">${headerData.brand.name || "Artemis Lawn & Leaf"}</div>
-        <div style="font-size:12px;color:#8b7a6f">${headerData.brand.tagline || "Friendly seasonal yard cleanup"}</div>
-      </div>
-    `;
-  }
-
-  // Hero
-  if (bodyData && document.getElementById("hero-text")) {
-    document.getElementById("hero-text").innerHTML = `
-      <h1>${bodyData.hero.title}</h1>
-      <p class="lead">${bodyData.hero.subtitle}</p>
-    `;
-  }
-
-  // Services
+  // 🌿 Services Section
   if (servicesData && document.getElementById("services-grid")) {
     const servicesGrid = document.getElementById("services-grid");
     servicesGrid.innerHTML = "";
-    servicesData.services.forEach(s => {
+    servicesData.services.forEach(service => {
       const el = document.createElement("div");
-      el.className = "card";
-      el.innerHTML = `<h3>${s.title}</h3><p>${s.desc}</p>`;
+      el.className = "card service";
+      el.innerHTML = `
+        <h3>${service.title}</h3>
+        <p>${service.desc}</p>
+      `;
       servicesGrid.appendChild(el);
     });
   }
 
-  // Footer
+  // 🌸 Footer
   if (footerData && document.querySelector("footer")) {
     const footer = document.querySelector("footer");
     footer.innerHTML = `

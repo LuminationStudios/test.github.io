@@ -200,8 +200,37 @@ h2, h3 {color: var(--muted);}
   box-shadow: var(--glow);
 }
 
-.contact .info {line-height: 1.4;}
-.contact .phone {font-weight: 700;}
+/* ✨ Improved info layout and centered button */
+.contact .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers text and button */
+  text-align: center;
+  line-height: 1.5;
+  gap: 6px; /* space between text and button */
+}
+
+.contact .phone {
+  font-weight: 700;
+}
+
+/* 🌸 Quote button styling (matches navbar buttons) */
+.contact .btn.cta {
+  margin-top: 6px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: white;
+  box-shadow: var(--glow);
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.contact .btn.cta:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
 
 /* ✨ Modal */
 .modal {

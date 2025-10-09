@@ -143,18 +143,20 @@ h2, h3 { color: var(--muted); }
 }
 
 .service {
-  background: #fffdfb;
+  background: linear-gradient(180deg, var(--card), var(--glass));
   border-radius: var(--radius);
   padding: 28px;
-  box-shadow: 0 10px 24px rgba(255, 180, 120, 0.25);
-  border: none;
+  box-shadow: var(--glow);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
   text-align: center;
 }
 
 .service:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 36px rgba(255, 190, 140, 0.35);
+  box-shadow: 0 12px 28px rgba(255, 180, 120, 0.35);
+  background: linear-gradient(180deg, #fffaf6, rgba(255, 255, 255, 0.95));
 }
 
 .service h3 {
@@ -169,6 +171,7 @@ h2, h3 { color: var(--muted); }
   line-height: 1.5;
   font-size: 0.95rem;
 }
+
 
 /* 💌 Contact Card */
 .contact {

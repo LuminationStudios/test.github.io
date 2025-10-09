@@ -1,4 +1,4 @@
-<!doctype html>
+]<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -11,25 +11,35 @@
 <link rel="stylesheet" href="index.css">
 
 </head>
-
-<body>
-  <header>
-    <div class="brand" id="brand"></div>
-    <nav id="navbar"></nav>
-  </header>
-
-  <!-- 🌸 Contact Section -->
-  <section id="contact">
-    <div class="card contact-card">
-      <h2>Contact Us</h2>
-      <div class="contact-info">
-        <div class="avatar">AA</div>
-        <p><strong>Owner:</strong> Artemis Aldrich</p>
-        <p>Serving your local neighborhoods with friendly seasonal yard cleanup!</p>
-        <button class="btn cta" id="quoteBtn">Get Quote</button>
+  <body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><svg width="36" height="36" viewBox="0 0 24 24"><path fill="#FFB88C" d="M12 2c-1 2-4 4-6 6s-3 4 0 7 6 3 10 1 2-8-4-14z"/></svg></div>
+        <div><div style="font-weight:700">Artemis Lawn & Leaf</div><div style="font-size:12px;color:#8b7a6f">Friendly seasonal yard cleanup</div></div>
       </div>
-    </div>
-  </section>
+      <nav></nav>
+    </header>
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-card">
+          <h1>Fast & friendly leaf removal</h1>
+          <p class="lead">We clear leaves and other debris to make your yard ready for the season. Reliable same-week service in your neighborhood.</p>
+          <div class="services" id="services-list"></div>
+        </div>
+        <aside class="hero-card">
+          <h3>Contact</h3>
+          <div class="contact" id="contact-card">
+            <div class="avatar">AA</div>
+            <div class="info">
+              <div id="owner-name">Artemis Aldrich</div>
+              <div class="phone" id="owner-phone">(208)866-9846</div>
+              <div style="font-size:13px;color:#8b7a6f">Serving local neighborhoods</div>
+              <button class="btn cta" id="quoteBtn">Get Quote</button>
+            </div>
+          </div>
+        </aside>
+      </section>
 
   <!-- ✨ Quote Modal -->
   <div id="quoteModal" class="modal">
@@ -62,14 +72,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Placeholder for JSON-driven sections -->
-  <main>
-    <section id="hero-text"></section>
-    <section id="services">
-      <div id="services-grid"></div>
-    </section>
-  </main>
 
   <footer></footer>
 

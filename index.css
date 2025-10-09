@@ -1,6 +1,7 @@
 :root {
   --bg: #ffffff;
   --card: #FFF6EE;
+  --card-pale: #fbfbfd
   --accent-1: #FFB88C;
   --accent-2: #FFD27F;
   --accent-3: #C7E8D2;
@@ -144,7 +145,7 @@ h2, h3 { color: var(--muted); }
 
 /* 🍮 Little Service Cards - Crème Style */
 .service {
-  background: var(--card);
+  background: var(--card-pale);
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: 0 8px 24px rgba(255, 180, 120, 0.15);

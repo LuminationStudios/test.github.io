@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "brand": {
+      "name": "Artemis Lawn & Leaf",
+      "logo": "🍂"
+    },
+    "links": [
+      { "label": "Home", "url": "https://artielawnandleaf.com" },
+      { "label": "Pricing", "url": "pricing.html" },
+      { "label": "About Us", "url": "about.html" },
+    ]
+  }
+}

@@ -254,3 +254,55 @@
     nav {display: none;}
     footer {flex-direction: column; text-align: center; gap: 8px;}
   }
+
+/* 🌷 Homepage Services Glow Style */
+#home #services,
+main #services {
+  background: linear-gradient(180deg, #fff8f3 0%, #fff2e6 100%);
+  padding: 40px 0;
+  border: none;
+  box-shadow: none;
+}
+
+#services h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+  justify-content: center;
+  background: transparent;
+}
+
+.service {
+  background: linear-gradient(180deg, #fffaf5 0%, #fff3ea 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(255, 180, 120, 0.25);
+  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(255, 190, 140, 0.35);
+}
+
+.service h3 {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.service p {
+  margin: 0;
+  color: #5b4c45;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}

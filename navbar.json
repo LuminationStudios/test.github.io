@@ -1,9 +1,8 @@
 {
   "navbar": {
     "links": [
-      { "text": "Home", "href": "#home", "class": "btn" },
-      { "text": "Services", "href": "#services", "class": "btn" },
-      { "text": "Contact", "href": "#contact-card", "class": "btn" },
+      { "text": "Home", "href": "https://artielawnandleaf.com", "class": "btn" },
+      { "text": "Prices", "href": "prices.html", "class": "btn" },
       { "text": "Get Quote", "href": "#", "class": "btn cta", "id": "quoteBtn" }
     ]
   }

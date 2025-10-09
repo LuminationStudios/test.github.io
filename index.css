@@ -14,7 +14,7 @@
 /* 🌸 Base Layout */
 html, body {
   height: 100%;
-  background: var(--bg);
+  background: linear-gradient(180deg, #FFEFE1 0%, #FFE0C9 100%);
   margin: 0;
   color: var(--muted);
   font-family: inherit;

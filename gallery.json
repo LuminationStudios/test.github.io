@@ -1,0 +1,8 @@
+{
+  "gallery": [
+    {"src": "images/yard1.jpg", "alt": "Freshly cleared yard"},
+    {"src": "images/yard2.jpg", "alt": "Leaf-free driveway"},
+    {"src": "images/yard3.jpg", "alt": "Clean front lawn"},
+    {"src": "images/yard4.jpg", "alt": "Autumn leaves collected"}
+  ]
+}

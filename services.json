@@ -1,0 +1,7 @@
+{
+  "services": [
+    { "title": "Leaf Cleanup", "desc": "Quick, efficient leaf removal to keep your yard clean and fresh." },
+    { "title": "One-Time Cleanup", "desc": "Perfect for seasonal transitions or event prep." },
+    { "title": "Snow Removal", "desc": "Reliable winter snow clearing for driveways and paths." }
+  ]
+}

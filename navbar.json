@@ -1,0 +1,9 @@
+{
+  "navbar": [
+    { "text": "Home", "href": "#home" },
+    { "text": "Services", "href": "#services" },
+    { "text": "Gallery", "href": "gallery.html" },
+    { "text": "Contact", "href": "#contact" },
+    { "text": "Get Quote", "href": "#quote", "cta": true }
+  ]
+}

@@ -1,7 +1,6 @@
 :root {
-  --bg: #FFEFE4;
-  --card: #FFF6EE;
-  --card-pale: #fbfbfd
+  --bg: #fff1e8; /* slightly darker creamy background */
+  --card: #fff6ee;
   --accent-1: #FFB88C;
   --accent-2: #FFD27F;
   --accent-3: #C7E8D2;
@@ -12,26 +11,22 @@
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* 🌸 Base Layout */
+/* 🩷 General Layout */
 html, body {
   height: 100%;
-  background: linear-gradient(180deg, #FFEFE4 0%, #FFE3D4 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, #FFE4D0 100%);
   margin: 0;
   color: var(--muted);
   font-family: inherit;
 }
 
-img { max-width: 100%; border-radius: var(--radius); }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; }
+img {max-width: 100%; border-radius: var(--radius);}
+a {color: inherit; text-decoration: none;}
+button {font-family: inherit; cursor: pointer;}
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 28px;
-}
+.container {max-width: 1100px; margin: 0 auto; padding: 28px;}
 
-/* 🌿 Header */
+/* 🧡 Header */
 header {
   display: flex;
   align-items: center;
@@ -64,35 +59,42 @@ nav {
 }
 
 /* 🍑 Buttons */
-a.btn {
+a.btn, button.btn {
   padding: 8px 14px;
   border-radius: 10px;
   text-decoration: none;
   background: transparent;
   color: var(--muted);
   transition: all 0.25s ease;
+  font-weight: 500;
 }
 
-a.btn:hover {
+a.btn:hover, button.btn:hover {
   background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
   color: white;
   box-shadow: var(--glow);
   transform: translateY(-1px);
 }
 
-a.cta {
+/* ✨ CTA Buttons (Navbar + Quote Modal) */
+a.cta, button.cta {
   background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
   color: white;
   box-shadow: var(--glow);
   font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-a.cta:hover {
+a.cta:hover, button.cta:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
 }
 
-/* 🌼 Hero */
+/* 🌿 Hero Section */
 .hero {
   display: grid;
   grid-template-columns: 1fr 380px;
@@ -109,54 +111,54 @@ a.cta:hover {
   backdrop-filter: blur(6px);
 }
 
-h1 { font-size: 36px; margin: 0 0 8px; }
-p.lead { margin: 0 0 18px; color: #5b4c45; }
-h2, h3 { color: var(--muted); }
+h1 {font-size: 36px; margin: 0 0 8px;}
+p.lead {margin: 0 0 18px; color: #5b4c45;}
+h2, h3 {color: var(--muted);}
 
-/* 🪴 Services Section - Matches Hero Card Style */
+/* 🪴 Services Section */
 #services {
   background: linear-gradient(180deg, var(--card), var(--glass));
-  border-radius: var(--radius);
-  padding: 60px 40px;
-  margin: 60px auto;
+  border-radius: 24px;
+  padding: 60px 50px;
+  margin: 40px auto;
   max-width: 1100px;
-  box-shadow: var(--glow);
-  backdrop-filter: blur(8px);
+  box-shadow:
+    0 8px 24px rgba(255, 180, 120, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
   position: relative;
-  text-align: center;
+  overflow: hidden;
 }
 
 #services h2 {
+  text-align: center;
   font-size: 1.8rem;
   color: var(--muted);
   margin-bottom: 2rem;
-  font-weight: 700;
 }
 
-/* Inner Grid */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
   justify-content: center;
+  padding: 16px;
   background: transparent;
-  padding: 20px 10px;
 }
 
-/* 🍮 Little Service Cards - Crème Style */
+/* Small Cards (creamy contrast to hero) */
 .service {
-  background: var(--card-pale);
+  background: #fffaf5;
   border-radius: var(--radius);
   padding: 24px;
-  box-shadow: 0 8px 24px rgba(255, 180, 120, 0.15);
+  box-shadow: 0 10px 24px rgba(255, 180, 120, 0.25);
   border: none;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
   text-align: center;
 }
 
 .service:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(255, 180, 120, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(255, 190, 140, 0.35);
 }
 
 .service h3 {
@@ -198,8 +200,8 @@ h2, h3 { color: var(--muted); }
   box-shadow: var(--glow);
 }
 
-.contact .info { line-height: 1.4; }
-.contact .phone { font-weight: 700; }
+.contact .info {line-height: 1.4;}
+.contact .phone {font-weight: 700;}
 
 /* ✨ Modal */
 .modal {
@@ -258,8 +260,8 @@ footer {
 
 /* 🌈 Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
 @keyframes sparkle {
@@ -270,7 +272,7 @@ footer {
 
 /* 📱 Responsive */
 @media (max-width: 880px) {
-  .hero { grid-template-columns: 1fr; }
-  nav { display: none; }
-  footer { flex-direction: column; text-align: center; gap: 8px; }
+  .hero {grid-template-columns: 1fr;}
+  nav {display: none;}
+  footer {flex-direction: column; text-align: center; gap: 8px;}
 }

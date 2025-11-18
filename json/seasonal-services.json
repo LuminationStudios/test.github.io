@@ -9,14 +9,6 @@
         { "title": "PC OS", "desc": "" },
         { "title": "Watch OS", "desc": "" }      
       ]
-    },
-    {
-      "name": "fallWinter",
-      "start": "09-02",
-      "end": "03-01",
-      "services": [
-        { "title": "Lumie Graphics LMG", "desc": "Stream: 3600, Clock Spped: 640MHz, Transistors: 13,250M, Boost: 0, Technical: 10NM, Texture: 199.0, Memory Type: GDDR4, Ram: 2GB, Memory Bus: 3 BIT, Memory Clock: 6900MHz, Memory Bandwith: 320.0 Gb/s, Shader: 6.0 Power: 8pin, Cooler: 2, Direct X: 11.1, Open GL: 4.5, Open CL: 2.1, Vulkan: 1.1.2" }
-      ]
     }
   ]
 }

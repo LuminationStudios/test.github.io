@@ -1,0 +1,24 @@
+{
+  "seasons": [
+    {
+      "name": "fallWinter",
+      "start": "09-02",
+      "end": "03-01",
+      "services": [
+        { "title": "Full Lawn Leaf Removal", "desc": "Let’s keep your yard feeling cozy and clean! I’ll carefully remove fallen leaves so your outdoor space stays tidy, inviting, and ready to enjoy." },
+        { "title": "Snow Removal", "desc": "Let’s keep your home safe and cozy this winter! I’ll clear snow with care so your driveway and walkways stay clean, easy to use, and welcoming for everyone who visits." },
+        { "title": "Seasonal Contracts", "desc": "Enjoy peace of mind all season long! I offer flexible daily and weekly service plans for fall and winter, making sure leaves are cleared and snow is handled before it becomes a hassle. Your outdoor space stays clean, safe, and welcoming—no matter the weather." }      
+      ]
+    },
+    {
+      "name": "springSummer",
+      "start": "03-02",
+      "end": "09-01",
+      "services": [
+        { "title": "Lawn Mowing", "desc": "Keep your lawn lush, green, and perfectly trimmed! I’ll mow your yard carefully so it looks neat and healthy all season long, giving your home a fresh and inviting curb appeal." },
+        { "title": "Garden Care", "desc": "Let your garden flourish! I’ll weed, trim, and maintain your flower beds and shrubs so your outdoor space blooms beautifully and stays vibrant throughout spring and summer." },
+        { "title": "Seasonal Lawn Plans", "desc": "Enjoy a worry-free lawn this spring and summer! I offer flexible weekly or bi-weekly service plans to keep your yard tidy, healthy, and ready for family gatherings, playtime, or relaxation." }
+      ]
+    }
+  ]
+}
